@@ -10,25 +10,25 @@ body {
   min-height:255px;
   min-width: 350px;
   width : auto;
-  border : 1px solid black;
+}
+.bkg-grey {
+  background-color: aqua;
 }
 
 .name-player{
   text-align:center;
-  color: #000470;
-
+  font-weight: 200;
+  color: #01068a;
 }
 
-.col-2, .col-4 {
-  border-top: 1px solid blue;
-  border-bottom: 1px solid red;
-}
 .dble-line {
-  min-height: 90px;
+  height: 30px;
 }
 
 .bi-dice-1, .bi-dice-2, .bi-dice-3, .bi-dice-4, .bi-dice-5 {
   display: none;
+  width : 100px;
+  height : 100px;
 }
 
 .bi-dice-6 {
@@ -36,18 +36,36 @@ body {
 }
 
 .color-theme {
-  color: #FF517A;
+  color: #e76986;
 }
 
 .btn-game {
-  color: #000470;
+  color: #01068a;
   font-weight: 200;
   background-color: transparent;
   border : 0;
 }
 
-/*
-#dotPlayer1 {
+.counter-pt {
+  color:white;
+  font-size: 1.5em;
+}
+
+.counter {
+  width: 90px;
+  background-color: #e76986;
+}
+
+.counter-title {
+  color:red;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.point {
+  font-size: 2.5em;
+}
+
+#dotPlayer1 , #dotPlayer2 {
   display: none;
 }
-*/
