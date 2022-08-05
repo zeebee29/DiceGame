@@ -2,18 +2,21 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  color: #42d45b;
 }
 
 .game-area{
   height: 80vh;
   min-height:255px;
-  min-width: 260px;
+  min-width: 350px;
   width : auto;
   border : 1px solid black;
 }
 
 .name-player{
   text-align:center;
+  color: #000470;
+
 }
 
 .col-2, .col-4 {
@@ -23,3 +26,28 @@ body {
 .dble-line {
   min-height: 90px;
 }
+
+.bi-dice-1, .bi-dice-2, .bi-dice-3, .bi-dice-4, .bi-dice-5 {
+  display: none;
+}
+
+.bi-dice-6 {
+  display: block;
+}
+
+.color-theme {
+  color: #FF517A;
+}
+
+.btn-game {
+  color: #000470;
+  font-weight: 200;
+  background-color: transparent;
+  border : 0;
+}
+
+/*
+#dotPlayer1 {
+  display: none;
+}
+*/
