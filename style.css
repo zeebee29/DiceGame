@@ -5,15 +5,21 @@ body {
   color: #42d45b;
 }
 
+.fond {
+  background: linear-gradient(217deg, rgba(251, 205, 91, 0.8), rgba(255, 166, 0, 0.275) 70.71%),
+  linear-gradient(127deg, rgba(245, 160, 195, 0.8), rgba(98, 0, 255, 0.314) 70.71%),
+  linear-gradient(336deg, rgba(211, 211, 212, 0.8), rgba(138, 3, 3, 0.334) 70.71%);
+  }
+
 .game-area{
   height: 80vh;
-  min-height:255px;
+  min-height:290px;
   min-width: 350px;
   width : auto;
-}
+  background: linear-gradient(to right,
+  rgb(239, 235, 235) 50%, rgb(253, 251, 248) 50%);
+  box-shadow: 2px 2px 5px black;
 
-.bkg-grey {
-  background-color: aqua;
 }
 
 .name-player {
@@ -21,6 +27,7 @@ body {
   font-weight: 200;
   color: #01068a;
   border: none ;
+  background-color: transparent;
 }
 
 .dble-line {
@@ -33,6 +40,10 @@ body {
 
 .bi-dice-6 {
   display: block;
+}
+
+.dice {
+  background-color: white;
 }
 
 .color-theme {
@@ -74,3 +85,4 @@ body {
 #dotPlayer1 , #dotPlayer2 {
   display: none;
 }
+
