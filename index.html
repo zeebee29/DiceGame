@@ -9,85 +9,107 @@
   <title>DiceGame</title>
 </head>
 <body>
-  <div class="fond p-3">
-    <div class="game-area">
-      <div class=" d-grid container-fluid text-center">
-        <div class="row h-50 justify-content-center align-items-center">
-          <div class="col-4">
-              <button id="btn-newgame" class="fs-6 btn-game">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle color-theme" viewbox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg>
-                NEW GAME</button>
+  <div class="container-fluid fond p-3">
+    <div class="game-area container">
+      <div class="row justify-content-center align-items-center py-2">
+        <button id="btn-newgame" class="btn-game">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle color-theme" viewbox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+          </svg>
+          NEW GAME</button>
+      </div>
+      <div class="row position-relative justify-content-center text-center">
+        <div class="row text-center">
+          <div class="col-6 part-area" style="z-index:2">
+            <input type="text" id="namePlayer1" class="name-player" name="name" value="PLAYER1" maxlength="8" size="14">
+          </div>
+          <div class="col-6  part-area" style="z-index:2">
+            <input type="text" id="namePlayer2" class="name-player" name="name" value="PLAYER2" maxlength="8" size="14">
           </div>
         </div>
-        <div class="row mt-3 mb-1 h-50  justify-content-center align-items-end">
-          <div class="position-relative col-4 fs-3">
-            <input type="text" id="namePlayer1" class="name-player" name="name" value="PLAYER 1" maxlength="10" size="12">
-            <div id="dotPlayer1" class="position-absolute top-50 start-100 translate-middle pe-0 pe-sm-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-dot color-theme" viewbox="0 0 16 16">
-                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                </svg>
-            </div>
+        <div class="row position-absolute justify-content-center dot-line" style="z-index:1">
+          <div class="col-1 p-0 m-0 ">
+            <div id="dotPlayer1" class="dot-place">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot color-theme" viewbox="0 0 16 16">
+              <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+              </svg>
+            </div>          
           </div>
-          <div class="col-4"></div> 
-          <div class="position-relative col-4 fs-3">
-            <input type="text" id="namePlayer2" class="name-player" name="name" value="PLAYER 2" maxlength="10" size="12">
-            <div id="dotPlayer2" class="position-absolute top-50 start-0 translate-middle">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-dot color-theme" viewbox="0 0 16 16">
-                    <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                </svg>
-            </div>
+          <div class="col-1 p-0 m-0 ">
+            <div id="dotPlayer2" class="dot-place">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-dot color-theme" viewbox="0 0 16 16">
+              <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+              </svg>
+            </div>          
           </div>
         </div>
-        <div class="row my-1 justify-content-center align-items-start">
-          <div id="score1" class="col-4 color-theme point">0</div>
-          <div class="position-relative col-4">
-            <div class="position-absolute top-0 start-50 translate-middle-x shadow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-1 dice color-theme" viewbox="0 0 16 16">
+      </div>
+      <div class="row my-5 position-relative justify-content-center text-center">
+        <div class="row">
+          <div id="score1" class="col-6 color-theme point">0</div>
+          <div id="score2" class="col-6 color-theme point">0</div>
+        </div>
+        <div class="row position-absolute justify-content-center">
+          <div class="col-12">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class=" bi bi-dice-1 dice color-theme shadow" viewbox="0 0 16 16">
                 <circle cx="8" cy="8" r="1.5"/>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-2 dice color-theme" viewbox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-2 dice color-theme shadow" viewbox="0 0 16 16">
                 <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-3 dice color-theme" viewbox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-3 dice color-theme shadow" viewbox="0 0 16 16">
                 <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-4 dice color-theme" viewbox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-4 dice color-theme shadow" viewbox="0 0 16 16">
                 <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-5 dice color-theme" viewbox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-5 dice color-theme shadow" viewbox="0 0 16 16">
                 <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-6 dice color-theme" viewbox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="currentColor" class="bi bi-dice-6 dice color-theme shadow" viewbox="0 0 16 16">
                 <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
               </svg>
             </div>
-          </div>
-          <div class="color-theme col-4 point">
-            <p id="score2">0</p>
+        </div>
+      </div>
+      <div class="row my-5 position-relative text-center justify-content-center"> <!--lignes + 2x cpteurs + 2x boutons-->
+        <div class="row"> <!--ligne pour cpteur courant -->
+          <div class="col-6">   <!--1ère colonne avec compteur1-->
+            <div class="row justify-content-center">
+              <div class="col-5 col-lg-2 col-md-3">
+                <div class="row text-center justify-content-center  ">
+                  <div class="counter counter-title p-0" style="text-align: center" >CURRENT</div>
+                  <div id="current1" class="counter counter-pt">0</div>
+                </div>
+              </div>
+            </div>
+          </div>  
+          <div class="col-6">   <!--2nde colonne avec compteur2-->
+            <div class="row text-center justify-content-center">
+              <div class="col-5 col-lg-2 col-md-3">
+                <div class="row text-center justify-content-center ">
+                  <div class="counter counter-title p-0">CURRENT</div>
+                  <div id="current2" class="counter counter-pt">0</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row mt-5 justify-content-center dble-line">
-          <div class="container">
-            <div class="row justify-content-evenly dble-line">
-              <div class="col-4 counter counter-title">CURRENT</div>
+        <div class="row justify-content-center">   <!-- Ligne pour les boutons ROLL & HOLD-->
+            <div class="row justify-content-center text-center">
               <div class="col-4">
-                <button id="btn-roll" class="fs-6 btn-game">
+                <button id="btn-roll" class="p-0 position-absolute top-0 start-50 translate-middle-x  btn-game">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat color-theme" viewbox="0 0 16 16">
-                      <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                     <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
                   </svg>
                   ROLL DICE
                 </button>
-              </div>
-              <div class="col-4 counter counter-title">CURRENT</div>
             </div>
-            <div class="row mt-0 mb-5 justify-content-evenly dble-line">
-              <div id="current1" class="col-4 counter counter-pt">0</div>
-              <div class="position-relative col-4">
-                <button id="btn-hold" class="fs-6 position-absolute bottom-0 start-50 translate-middle-x  btn-game">
+            <div class="row justify-content-center text-center">
+              <div class="col-4">
+                <button id="btn-hold" class="p-0 position-absolute bottom-0 start-50 translate-middle-x  btn-game">
                   <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-down color-theme" viewbox="0 0 16 16">
                     <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
                     <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
@@ -95,7 +117,6 @@
                   HOLD
                 </button>
               </div>
-              <div id="current2" class="col-4 counter counter-pt">0</div>
             </div>
           </div>
         </div>

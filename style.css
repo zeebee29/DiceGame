@@ -9,25 +9,30 @@ body {
   background: linear-gradient(217deg, rgba(251, 205, 91, 0.8), rgba(255, 166, 0, 0.275) 70.71%),
   linear-gradient(127deg, rgba(245, 160, 195, 0.8), rgba(98, 0, 255, 0.314) 70.71%),
   linear-gradient(336deg, rgba(211, 211, 212, 0.8), rgba(138, 3, 3, 0.334) 70.71%);
-  }
-
+  min-width: 320px;
+}
+input {
+  text-align: left;
+}
 .game-area{
   height: 80vh;
   min-height:290px;
-  min-width: 350px;
   width : auto;
+  padding: 10px;
   background: linear-gradient(to right,
   rgb(239, 235, 235) 50%, rgb(253, 251, 248) 50%);
   box-shadow: 2px 2px 5px black;
-
 }
 
-.name-player {
-  text-align:center;
+.name-player, .name-player1, .name-player2 {
   font-weight: 200;
+  font-size: 2em;
   color: #01068a;
   border: none ;
   background-color: transparent;
+  padding:0;
+  margin:0;
+  text-align: center;
 }
 
 .dble-line {
@@ -43,6 +48,8 @@ body {
 }
 
 .dice {
+  margin-left: auto;
+  margin-right: auto;
   background-color: white;
 }
 
@@ -55,6 +62,29 @@ body {
   font-weight: 200;
   background-color: transparent;
   border : 0;
+  min-width: 100px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.dot-line {
+  margin:0;
+  padding:0;
+  font-size: 1em;
+}
+
+.dot-place {
+  width : 50px;
+  height: 50px;
+  padding: 0 0 0 0;
+  display: none;
+}
+#dotPlayer1 {
+  margin: auto auto auto 0;
+}
+#dotPlayer2 {
+  margin: auto 0 auto auto;
 }
 
 .btn-game:disabled, .btn-game[disabled] {
@@ -67,7 +97,6 @@ body {
 }
 
 .counter {
-  width: 90px;
   background-color: #e76986;
 }
 
@@ -82,7 +111,32 @@ body {
   font-size: 2.5em;
 }
 
-#dotPlayer1 , #dotPlayer2 {
-  display: none;
+@media only screen and (max-width : 768px) {
+  .name-player {
+    font-size: 1.5em;
+  }
+  #dotPlayer1, #dotPlayer2 {
+    width: 40px;
+    height: 40px;
+  }
 }
-
+@media only screen and (max-width : 520px) {
+  .name-player {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (max-width : 380px) {
+  .name-player {
+    font-size: 1em;
+  }
+  #dotPlayer1, #dotPlayer2 {
+    width: 30px;
+    height: 30px;
+  }
+  .btn-game {
+    font-size : 0.7em;
+  }
+  .counter-title {
+    font-size: 0.7em;
+  }
+}
