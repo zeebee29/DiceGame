@@ -1,14 +1,14 @@
 let player1 = {
-  name: 'PLAYER1', 
+  name: 'PLAYER1',
   dot: false,
-  score: 0, 
+  score: 0,
   current: 0,
   bold: false,
 };
 
 let player2 = {
-  name: 'PLAYER2', 
-  dot: false, 
+  name: 'PLAYER2',
+  dot: false,
   score: 0,
   current: 0,
   bold: false,
@@ -49,24 +49,24 @@ btnHold.disabled = true;
 btnRoll.disabled = true;
 
 
-function getRandomNum(min,max) {
+function getRandomNum(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min +1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function isNewGameConfirmed() {  
-  return   (confirm("A game is in progress. Do you want to restrat ?"));
+function isNewGameConfirmed() {
+  return (confirm("A game is in progress. Do you want to restart ?"));
 }
 
-function andTheWinnerIs (num) {
+function andTheWinnerIs(num) {
   gameInProgress = false;
-  if (confirm('The Winner is ' + game[num].name + '\nAnother game ?')) {
+  if (confirm('The Winner is ' + game[num].name + '.\nAnother game ?')) {
     newGame();
   }
 }
 
-function initPlayer (player) {
+function initPlayer(player) {
   player.score = 0;
   player.current = 0;
   refresh(player);
@@ -77,20 +77,20 @@ function refresh(player) {
   player.txtCurrent.textContent = player.current;
 }
 
-function changeToPlayer (player) {
+function changeToPlayer(player) {
   player.idDot.style.display = "block";
   player.idName.style.fontWeight = "bold";
   player.otherPlayer.idDot.style.display = "none";
   player.otherPlayer.idName.style.fontWeight = "200";
 }
-  
+
 function initGame() {
   btnHold.disabled = true;
   btnRoll.disabled = false;
   initPlayer(player1);
   initPlayer(player2);
-  
-  playerLap = getRandomNum(0,game.length-1)
+
+  playerLap = getRandomNum(0, game.length - 1)
   changeToPlayer(game[playerLap]);
 }
 
@@ -99,9 +99,9 @@ function holdGain() {
   btnRoll.disabled = true;
 
   game[playerLap].score += game[playerLap].current;
-  initCurrentScore (game[playerLap]);
-  
-  if (game[playerLap].score >= scoreToWin) {   
+  initCurrentScore(game[playerLap]);
+
+  if (game[playerLap].score >= scoreToWin) {
     andTheWinnerIs(playerLap);
   } else {
     btnRoll.disabled = false;
@@ -111,9 +111,9 @@ function holdGain() {
 
 function diceRoll() {
   gameInProgress = true;
-  const diceValue = getRandomNum(1 , 6);
-  Array.from(dices).forEach((element,index) => {
-    if ((index+1) === diceValue) {
+  const diceValue = getRandomNum(1, 6);
+  Array.from(dices).forEach((element, index) => {
+    if ((index + 1) === diceValue) {
       element.style.display = "block";
     } else {
       element.style.display = "none";
@@ -122,12 +122,12 @@ function diceRoll() {
   return diceValue;
 }
 
-function initCurrentScore (player) {
-  player.current =0;
+function initCurrentScore(player) {
+  player.current = 0;
   refresh(player);
 }
 
-function alternatePlayer () {
+function alternatePlayer() {
   playerLap = nextPlayer(playerLap);
   changeToPlayer(game[playerLap]);
 }
@@ -162,12 +162,12 @@ function newGame() {
   }
 }
 
-function changeName (element) {
+function changeName(element) {
   const name = element.target.value;
-  if (name ==='') {
+  if (name === '') {
     alert('Renseignez un nom de joueur.');
   } else {
-    Array.from(game).forEach ((player,index) => {
+    Array.from(game).forEach((player, index) => {
       if (player.idName.id == element.target.id) {
         player.name = name;
       }
