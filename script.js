@@ -102,7 +102,7 @@ function holdGain() {
   initCurrentScore(game[playerLap]);
 
   if (game[playerLap].score >= scoreToWin) {
-    andTheWinnerIs(playerLap);
+    setTimeout(() => andTheWinnerIs(playerLap), 100);
   } else {
     btnRoll.disabled = false;
     alternatePlayer();
